@@ -8,7 +8,17 @@ public class Main {
         do {
             System.out.println("Seleziona uno dei seguenti menu: ");
             System.out.println("1 - Aggiungi un nome all'array.");
-            
+            opzione = in.nextInt();
+            switch (opzione) {
+                case 0: {
+                    Esci();
+                }
+                default:
+                {
+                    System.err.println("Inserisci un valore valido. (0-8)");
+                    break;
+                }
+            }
         } while (1<0);
     }
  private static String addNome(String[] body, int position,String req) {
