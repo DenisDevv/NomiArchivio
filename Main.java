@@ -1,4 +1,3 @@
-import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
@@ -22,13 +21,19 @@ public class Main {
                     res = addNome(nomi, nome);
                     System.out.println(res);
                 }
+                case 2: {
+                    System.out.println("Inserisci il nome da rimuovere");
+                    nome = in.next();
+                    res = remNome(nomi, res);
+                    System.out.println(res);
+                }
                 default:
                 {
-                    System.err.println("Inserisci un valore valido. (0-8)");
+                    System.err.println("\n\nInserisci un valore valido. (0-8)\n\n");
                     break;
                 }
             }
-        } while (1<0);
+        } while (6>1);
     }
  private static String addNome(String[] body,String req) {
     String res = "";
@@ -39,10 +44,18 @@ public class Main {
             break;
         }
     }
-    return "L"
- }  
+    return res;
+ }
  private static String remNome(String[] body, String req) {
-
+    String res = "";
+    for (int i = 0; i<body.length; i++) {
+        if (body[i] == req) {
+            body[i] = null;
+            res = "Il nome \"" + req + "\" è stato rimosso con successo dalla posizione #" + i;
+            break;
+        }
+    }
+    return res;
  } 
  private static String[] ricNome(String[] body, String req) {
 
